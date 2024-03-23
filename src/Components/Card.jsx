@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useContextGlobal } from "./utils/ContextGlobal";
-import TempAlert from "./TempAlert"; // Asegúrate de tener la ruta correcta
+import TempAlert from "./TempAlert"; 
 
 const Card = ({ data }) => {
   const { theme, setFavs, favs } = useContextGlobal();
   const [active, setActive] = useState(false);
-  const [tempAlertMessage, setTempAlertMessage] = useState(""); // Nuevo estado para el mensaje temporal
+  const [tempAlertMessage, setTempAlertMessage] = useState("");
 
   useEffect(() => {
     setActive(favs.includes(data));
@@ -15,10 +15,10 @@ const Card = ({ data }) => {
   const toggleFav = () => {
     if (active) {
       setFavs(favs.filter(fav => fav.id !== data.id));
-      setTempAlertMessage(`Dentista ${data.name} eliminado de favoritos`); // Actualiza el mensaje temporal
+      setTempAlertMessage(`Dentista ${data.name} eliminado de favoritos`); 
     } else {
       setFavs([...favs, data]);
-      setTempAlertMessage(`Dentista ${data.name} agregado como favoritos`); // Actualiza el mensaje temporal
+      setTempAlertMessage(`Dentista ${data.name} agregado como favoritos`); 
     }
   };
 
