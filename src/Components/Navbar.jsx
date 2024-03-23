@@ -2,12 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useContextGlobal } from "./utils/ContextGlobal";
 
-
 const Navbar = () => {
   const { dispatch, theme } = useContextGlobal();
 
   return (
-    <nav className="nav" id={theme.theme}>
+    <nav className="nav" id={theme}>
      
         <div className="links-navbar">
         <Link to="/">Home</Link>
@@ -15,12 +14,12 @@ const Navbar = () => {
         <Link to="/favs">Favoritos</Link>
         </div>
      
-    
-      <button className="btn-theme" onClick={() => dispatch({ type: "theme" })}>
+      
+      <button className="btn-theme" onClick={() => dispatch({ type: "change_theme" })}>
         Change theme
       </button>
     </nav>
   );
 };
 
-export default Navbar;
+export default React.memo(Navbar);

@@ -23,7 +23,7 @@ const Detail = () => {
           <p>Email: {data.email}</p>
           <p>Phone: {data.phone}</p>
           <p>Website: {data.website}</p>
-          <button onClick={() => navigate(-1)} className="btn-goback">Go back</button>
+          <button onClick={() => navigate(-1)} className="btn-back"> Volver</button>
         </div>
       </div>
     </>
