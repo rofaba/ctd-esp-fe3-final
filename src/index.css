@@ -24,6 +24,23 @@ code {
   background-color: lightgreen;
 }
 
+.removeFav {
+  background-color: #dc3545; 
+  color: white; 
+
+  /* margin-top: 10px;  */
+  
+  border: none;
+  border-radius: 5px; 
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s; 
+}
+
+.removeFav:hover {
+  background-color: #c82333; 
+}
+
 #dark .favButton {
   background-color: lightblue;;
   color: #f1f1f1;
@@ -35,20 +52,7 @@ code {
 }
 
 
-.removeFav {
-  background-color: #dc3545; 
-  color: white; 
-  margin-top: 10px; 
-  border: none;
-  border-radius: 5px; 
-  padding: 10px;
-  cursor: pointer;
-  transition: background-color 0.3s; 
-}
 
-.removeFav:hover {
-  background-color: #c82333; 
-}
 
 h1 {
   text-align: center;

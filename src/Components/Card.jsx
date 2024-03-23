@@ -1,6 +1,5 @@
 import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useContextGlobal } from "./utils/ContextGlobal";
 
@@ -10,25 +9,18 @@ const Card = ({ data }) => {
   const [active, setActive] = useState(false);
 
   useEffect(() => {
-    if (favs.includes(data)) {
-      setActive(true)
-    }
-  },[favs, data])
-  
+    setActive(favs.includes(data));
+  }, [favs, data]);
 
-  const addFav = () => {
-    if (favs.includes(data)) {
-      return null
-    }
-    setFavs([...favs, data]);
-    alert(`dentista ${data.name} agregado como favoritos`)
-  };
-
-  const removeFav = () => {
-    if (favs.includes(data)) {
+  const toggleFav = () => {
+    if (active) {
+      // Si el dentista ya está en favoritos, lo eliminamos
       setFavs(favs.filter(fav => fav.id !== data.id));
-      setActive(false); // Desactiva el estado activo si se elimina de favoritos
       alert(`Dentista ${data.name} eliminado de favoritos`);
+    } else {
+      // Si el dentista no está en favoritos, lo agregamos
+      setFavs([...favs, data]);
+      alert(`Dentista ${data.name} agregado como favoritos`);
     }
   };
 
@@ -40,27 +32,15 @@ const Card = ({ data }) => {
         <h5>{data.username}</h5>
       </Link>
       <button
-        onClick={() => {
-          addFav();
-          setActive(true);
-        }}
-        className={`favButton ${active ? "active" : ""}`}
+        onClick={toggleFav}
+        className={`favButton ${active ? "removeFav" : ""}`}
         id={theme.theme}
       >
-        Agregar a favoritos
+        {active ? "Eliminar de favoritos" : "Agregar a favoritos"}
       </button>
-      {active && ( // Solo muestra este botón si el dentista ya está en favoritos
-        <button
-          onClick={removeFav}
-          className={`favButton removeFav ${active ? "active" : ""}`}
-          id={theme.theme}
-        >
-          Eliminar de favoritos
-        </button>
-      )}
     </div>
   );
-  
 };
 
 export default Card;
+
