@@ -1,3 +1,9 @@
+/* Uso de async/await en fetchDentist: Se transformó la función getDentist a una versión async llamada fetchDentist dentro de un useEffect, lo que mejora la legibilidad y manejo de errores.
+Memoización del valor del contexto con useMemo: Esto evita que los consumidores del contexto se rendericen innecesariamente debido a objetos de valor que cambian en cada render.
+Optimización de useEffect para localStorage: Se dejó sin cambios, pero asegurándose de que las dependencias estén correctamente especificadas para evitar efectos innecesarios.
+Cambio en el manejo de errores: Se añadió un manejo básico de errores en la petición de axios para una mejor depuración y estabilidad. */
+
+
 import axios from "axios";
 import React, { useReducer, useEffect, useState, createContext, useContext, useMemo } from "react";
 
