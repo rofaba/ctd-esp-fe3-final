@@ -17,6 +17,7 @@ code {
   border: none;
   width: 100%;
   cursor: pointer;
+  
 }
 
 .favButton:hover {
@@ -223,6 +224,7 @@ label {
   border-radius: 10px;
   background-color: #f0f0f0;
   transition: border 0.3s;
+  color:#000;
 }
 
 .card:hover {
@@ -259,6 +261,7 @@ label {
   text-align: center;
   border: 2px solid black;
   border-radius: 10px;
+  color:#000;
 }
 
 .img-doc-detail {
@@ -274,6 +277,9 @@ label {
   background-color: rgb(196, 218, 255);
   font-size: 1rem;
   font-weight: 700;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; 
 }
 
 .btn-back:hover {
@@ -388,6 +394,7 @@ tr:nth-child(even) {
 #dark .card, #dark .card-detail {
   background-color: #2C3E50;
   border-color: #475a72;
+  color:#ecf0f1;
 }
 
 .card a,
@@ -395,6 +402,12 @@ tr:nth-child(even) {
 .card a:visited,
 .card a:hover,
 .card a:focus,
+.card h4,
+.card h5,
+.card p {
+  color: inherit; 
+  text-decoration: none;
+}
 .card a:active {
   color: inherit; 
   text-decoration: none;
@@ -410,3 +423,15 @@ tr:nth-child(even) {
 .card .dentist-name:focus {
   color: #000; 
 }
+.no-favs {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
+.navbar-logo {
+  height: 50px; 
+  width: auto; 
+  text-decoration: none;
+  padding-right: 20px;
+}
+ 
