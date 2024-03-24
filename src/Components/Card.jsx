@@ -25,8 +25,8 @@ const Card = ({ data }) => {
   return (
     <>
       <div className="card">
-        <Link to={`/detail/${data.id}`} key={data.id} className="link-card">
-          <img src="./images/doctor.jpg" alt="img-doc" className="img-doc" />
+        <Link to={`/detail/${data.id}`} key={data.id} className="card-container">
+          <img src="./images/doctor.jpg" alt="imagen-dentista" className="img-doc" />
           <h5>{data.name}</h5>
           <h5>{data.username}</h5>
         </Link>

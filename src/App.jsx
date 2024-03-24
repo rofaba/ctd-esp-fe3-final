@@ -6,6 +6,7 @@ import Home from "./Routes/Home";
 import Contact from "./Routes/Contact";
 import Favs from "./Routes/Favs";
 import { useContextGlobal } from "./Components/utils/ContextGlobal";
+import Error404 from "./Components/Error404";
 
 function App() {
   const { theme } = useContextGlobal();
@@ -18,6 +19,7 @@ function App() {
         <Route path="/detail/:id" element={<Detail />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/favs" element={<Favs />} />
+        <Route path="*" element={<Error404 />} />
       </Routes>
       <Footer />
     </div>

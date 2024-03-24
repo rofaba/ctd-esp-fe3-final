@@ -14,9 +14,9 @@ const Favs = () => {
       {filteredFavs.length > 0 ? ( 
         <div className="card-grid"> 
           {filteredFavs.map(item => (
-            <Link to={`/detail/${item.id}`} key={item.id} className="link-card">
-              <div className="card">
-                <img src="./images/doctor.jpg" alt="img-doc" className="img-doc" />
+            <Link to={`/detail/${item.id}`} key={item.id}>
+              <div className="card-detail">
+                <img src="./images/doctor.jpg" alt="imagen-dentista" className="img-doc" />
                 <h4>{item.name}</h4>
                 <h5>{item.username}</h5>
               </div>
@@ -28,7 +28,7 @@ const Favs = () => {
          
       )}
       
-      <button onClick={() => navigate(-1)} className="btn-back">Volver</button>
+      <button onClick={() => navigate("/")} className="btn-back">Volver</button>
     </>
   );
 };

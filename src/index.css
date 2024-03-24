@@ -11,28 +11,6 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
-.favButton {
-  background-color: lightblue;
-  padding: 10px;
-  border: none;
-  width: 100%;
-  cursor: pointer;
-  
-}
-
-.favButton:hover {
-  background-color: lightgreen;
-}
-
-#dark .favButton {
-  background-color: #3498db;
-  color: #f1f1f1;
-}
-
-#dark .favButton:hover {
-  background-color: #2980b9;
-}
-
 .tempAlert {
   position: fixed;
   top: 20px;
@@ -44,18 +22,20 @@ code {
   z-index: 1000;
 }
 
-h2 {
-  text-align: center;
-}
-
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 25px 50px;
-  background-color: #2C3E50;
+  background-color: gray;
   color: white;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-logo {
+  height: 50px;
+  width: auto;
+  padding-right: 20px;
 }
 
 .links-navbar {
@@ -64,7 +44,8 @@ h2 {
   align-items: center;
 }
 
-.links-navbar a {
+.links-navbar a, .links-navbar a:link, .links-navbar a:visited, 
+.links-navbar a:hover, .links-navbar a:focus, .links-navbar a:active {
   color: #ecf0f1;
   text-decoration: none;
   margin: 0 15px;
@@ -92,60 +73,23 @@ h2 {
   background-color: #2980b9;
 }
 
-footer {
-  background-color: #dbdbdb;
-  display: flex;
-  justify-content: space-evenly;
+h2 {
   text-align: center;
-  padding: 3rem 0;
-  position: relative;
-  bottom: 0;
-  width: 100%;
-  height: 40px;
-  margin-top: 2rem;
-}
-
-footer .DhLogo {
-  display: flex;
-}
-
-footer .DhLogo p {
-  width: 100%;
-}
-
-footer .DhLogo img {
-  width: 100%;
-  height: 100%;
-}
-
-footer .social-media {
-  width: 200px;
-  height: 50px;
-}
-
-footer .social-media img {
-  width: 30px;
-  padding-right: 20px;
-}
-
-footer .social-media img:hover {
-  cursor: pointer;
-  transform: scale(1.15);
 }
 
 .container-form {
   max-width: 500px;
   width: 90%;
-  margin: auto;
-  margin-top: 10px;
+  margin: 20px auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
   background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .form-container {
@@ -153,17 +97,21 @@ footer .social-media img:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  
 }
 
 .input-form {
   width: 100%;
   margin-bottom: 15px;
   padding: 12px;
+  background-color: #f7f8fa;
   border: 1px solid #ccd0d5;
   border-radius: 8px;
-  background-color: #f7f8fa;
   transition: border-color 0.2s ease-in-out;
+}
+
+.input-form:focus {
+  border-color: #007bff;
+  outline: none;
 }
 
 label {
@@ -172,24 +120,18 @@ label {
   text-align: left;
 }
 
-.input-form:focus {
-  border-color: #007bff;
-  outline: none;
-}
-
 .btn-form {
-  width: 80%; /* Ajusta el ancho si es necesario */
+  width: 80%;
   padding: 12px;
-  border: none;
-  border-radius: 8px;
   background-color: #007bff;
   color: white;
   font-size: 1rem;
   font-weight: 700;
+  border: none;
+  border-radius: 8px;
   transition: background-color 0.2s;
-  margin-left: auto; /* Alinea el botón a la derecha */
-  margin-right: auto; /* También alinea el botón a la izquierda, efectivamente centrando */
-  display: block; /* Cambia a display block para permitir margin auto */
+  margin: auto;
+  display: block;
 }
 
 .btn-form:hover {
@@ -198,37 +140,37 @@ label {
 }
 
 .success-message {
-  position: absolute; 
-  top: 90%; 
+  position: absolute;
+  top: 90%;
   left: 50%;
   transform: translate(-50%, 0);
   background-color: #dff0d8;
-  color: #3c763d; 
+  color: #3c763d;
   padding: 10px 20px;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-  margin-top: 1rem; 
-  z-index: 10; 
-  width: calc(80% - 40px); 
+  z-index: 10;
+  width: calc(80% - 40px);
 }
 
 .card {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0.8rem;
-  border: 0.5px solid rgb(136, 136, 136);
-  margin: 20px;
-  max-width: 300px; 
-  width: 100%;
-  border-radius: 10px;
-  background-color: #f0f0f0;
-  transition: border 0.3s;
-  color:#000;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px auto;
+  max-width: 300px;
 }
 
 .card:hover {
-  border: 0.5px solid rgb(206, 217, 142);
+  border-color: rgb(206, 217, 142);
 }
 
 .card-grid {
@@ -242,11 +184,13 @@ label {
 
 .img-doc {
   width: 80%;
+  border-radius: 50%;
+  margin-bottom: 15px;
 }
 
 .container-card-detail {
-  width: 100%; 
-  height: 80vh; 
+  width: 100%;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -254,32 +198,38 @@ label {
 }
 
 .card-detail {
-  width: 100%; 
-  max-width: 500px;
-  margin: auto; 
-  padding: 5px;
+  max-width: 300px;
+  margin: 10px auto;
+  padding: 10px;
   text-align: center;
-  border: 2px solid black;
+  color: #000;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
   border-radius: 10px;
-  color:#000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
 }
 
 .img-doc-detail {
-  width: 50%; 
-  margin-bottom: 20px; 
+  width: 40%;
+  margin-bottom: 20px;
 }
 
 .btn-back {
   width: 30%;
   padding: 10px;
-  border: none;
-  border-radius: 10px;
   background-color: rgb(196, 218, 255);
+  color: white;
   font-size: 1rem;
   font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  margin: auto;
   display: block;
-  margin-left: auto;
-  margin-right: auto; 
 }
 
 .btn-back:hover {
@@ -323,46 +273,21 @@ tr:nth-child(even) {
   background-color: #e5e5e5;
 }
 
-
 #dark {
-  background-color: #34495E;
+  background-color: #3B4C5A;
   color: #ecf0f1;
 }
 
-#dark .container-form {
-  background-color: #2C3E50; 
+#dark .container-form, #dark .card, #dark .card-detail{
+  background-color: #2C3E50;
+  border-color: #475a72;
   color: #ecf0f1;
 }
-
-#dark .input-form {
-  background-color: #34495E; 
-  color: #ecf0f1; 
-  border-color: #4A6FA5;
+#dark .btn-back {
+  background-color: (196, 218, 255);
 }
 
-#dark .input-form:focus {
-  border-color: #1ABC9C; 
-}
-
-#dark .btn-form {
-  background-color: #3498db; 
-}
-
-#dark .btn-form:hover {
-  background-color: #2980b9;
-}
-
-#dark .success-message {
-  background-color: #16a085;
-  color: #ffffff; 
-}
-
-
-#dark label {
-  color: #ecf0f1; 
-}
-
-#dark .nav, #dark .footer {
+#dark .nav, #dark {
   background-color: #2C3E50;
 }
 
@@ -371,16 +296,8 @@ tr:nth-child(even) {
   color: #f1f1f1;
 }
 
-#dark .favButton:hover {
+#dark .favButton:hover, #dark .removeFav:hover {
   background-color: #2980b9;
-}
-
-#dark .removeFav {
-  background-color: #e74c3c;
-}
-
-#dark .removeFav:hover {
-  background-color: #c0392b;
 }
 
 #dark .links-navbar a, #dark .links-navbar a:hover {
@@ -391,47 +308,86 @@ tr:nth-child(even) {
   background-color: #2980b9;
 }
 
-#dark .card, #dark .card-detail {
-  background-color: #2C3E50;
-  border-color: #475a72;
-  color:#ecf0f1;
-}
-
 .card a,
 .card a:link,
 .card a:visited,
 .card a:hover,
 .card a:focus,
+.card a:active,
 .card h4,
 .card h5,
 .card p {
-  color: inherit; 
+  color: inherit;
   text-decoration: none;
 }
-.card a:active {
-  color: inherit; 
-  text-decoration: none;
-}
-
-
-.card .dentist-name {
-  color: #000; 
-}
-
 
 .card .dentist-name:hover,
 .card .dentist-name:focus {
-  color: #000; 
+  color: inherit;
 }
+
 .no-favs {
   text-align: center;
   font-size: 1.2rem;
   margin-top: 20px;
 }
-.navbar-logo {
-  height: 50px; 
-  width: auto; 
-  text-decoration: none;
+
+.Error_404 {
+  display: flex;
+  width: 500px;
+  height: auto;
+  margin: 20px auto;
+}
+footer {
+  background-color: gray;
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  padding: 3rem 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  margin-top: 2rem;
+}
+
+footer .DhLogo {
+  display: flex;
+}
+
+footer .DhLogo p {
+  width: 100%;
+}
+
+footer .DhLogo img {
+  width: 100%;
+  height: 100%;
+}
+
+footer .social-media {
+  width: 200px;
+  height: 50px;
+}
+
+footer .social-media img {
+  width: 30px;
   padding-right: 20px;
 }
- 
+
+footer .social-media img:hover {
+  cursor: pointer;
+  transform: scale(1.15);
+}
+
+#dark .nav, #dark .footer {
+  background-color: #212A32;
+  color: white;
+}
+
+#dark footer a, #dark footer a:visited {
+  color: white;
+}
+
+#dark footer a:hover {
+  color: #1ABC9C;
+}
