@@ -1,4 +1,3 @@
-import React from "react";
 import { useContextGlobal } from "./utils/ContextGlobal";
 
 const Footer = () => {

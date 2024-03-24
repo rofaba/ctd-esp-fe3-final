@@ -1,4 +1,3 @@
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -9,9 +8,9 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
+
 .favButton {
   background-color: lightblue;
   padding: 10px;
@@ -24,90 +23,72 @@ code {
   background-color: lightgreen;
 }
 
-.removeFav {
-  background-color: #dc3545; 
-  color: white; 
-
-  /* margin-top: 10px;  */
-  
-  border: none;
-  border-radius: 5px; 
-  padding: 10px;
-  cursor: pointer;
-  transition: background-color 0.3s; 
-}
-
-.removeFav:hover {
-  background-color: #c82333; 
-}
-
 #dark .favButton {
-  background-color: lightblue;;
+  background-color: #3498db;
   color: #f1f1f1;
 }
 
 #dark .favButton:hover {
-  cursor: pointer;
-  background-color: lightblue;
+  background-color: #2980b9;
 }
-
 
 .tempAlert {
   position: fixed;
-  bottom: 20px;
+  top: 20px;
   right: 20px;
-  background-color: black;
+  background-color: green;
   color: white;
   padding: 20px;
   border-radius: 5px;
   z-index: 1000;
 }
 
-
-h1 {
+h2 {
   text-align: center;
 }
 
-nav {
+.nav {
   display: flex;
-  width: 100%;
   justify-content: space-between;
   align-items: center;
-  padding: 25px 0;
-  background-color: #f0f0f0;
+  padding: 25px 50px;
+  background-color: #2C3E50;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .links-navbar {
   display: flex;
   justify-content: space-evenly;
-  width: 50%;
-  margin-left: 20px;
-  font-size: 1.2rem;
-  
+  align-items: center;
+}
+
+.links-navbar a {
+  color: #ecf0f1;
+  text-decoration: none;
+  margin: 0 15px;
+  padding: 10px 0;
+  border-bottom: 3px solid transparent;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.links-navbar a:hover {
+  color: #1ABC9C;
+  border-color: #1ABC9C;
 }
 
 .btn-theme {
-  margin-right: 20px;
-  width: 150px;
-  padding: 5px;
-  border: 1px solid;
-  border-radius: 10px;
-  background-color: #fdfdfd;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .btn-theme:hover {
-  cursor: pointer;
-  background-color: #f0f0f0;
-}
-
-a {
-  color: #000;
-  text-decoration: none;
-  margin: 5px;
-  cursor: pointer;
-}
-a:hover {
-  color: rgb(136, 136, 136);
+  background-color: #2980b9;
 }
 
 footer {
@@ -128,7 +109,7 @@ footer .DhLogo {
 }
 
 footer .DhLogo p {
-  width: 100% ;
+  width: 100%;
 }
 
 footer .DhLogo img {
@@ -152,46 +133,82 @@ footer .social-media img:hover {
 }
 
 .container-form {
-  width: 100%;
-  height: 74vh;
+  max-width: 500px;
+  width: 90%;
+  margin: auto;
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: #ffffff;
 }
 
-form {
-  margin-top: 40px;
+.form-container {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 500px;
-  height: 200px;
+  
 }
 
 .input-form {
-  width: 50%;
-  margin: 10px 0 20px 0;
-  padding: 6px;
-  border: none;
-  border-radius: 10px;
-  background-color: #f0f0f0;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #ccd0d5;
+  border-radius: 8px;
+  background-color: #f7f8fa;
+  transition: border-color 0.2s ease-in-out;
+}
+
+label {
+  width: 100%;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.input-form:focus {
+  border-color: #007bff;
+  outline: none;
 }
 
 .btn-form {
-  margin: 20px 0 50px 0;
-  width: 50%;
-  padding: 6px;
+  width: 80%; /* Ajusta el ancho si es necesario */
+  padding: 12px;
   border: none;
-  border-radius: 10px;
-  background-color: rgb(196, 218, 255);
+  border-radius: 8px;
+  background-color: #007bff;
+  color: white;
   font-size: 1rem;
   font-weight: 700;
+  transition: background-color 0.2s;
+  margin-left: auto; /* Alinea el botón a la derecha */
+  margin-right: auto; /* También alinea el botón a la izquierda, efectivamente centrando */
+  display: block; /* Cambia a display block para permitir margin auto */
 }
 
 .btn-form:hover {
+  background-color: #0056b3;
   cursor: pointer;
-  background-color: rgb(178, 206, 255);
+}
+
+.success-message {
+  position: absolute; 
+  top: 90%; 
+  left: 50%;
+  transform: translate(-50%, 0);
+  background-color: #dff0d8;
+  color: #3c763d; 
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  margin-top: 1rem; 
+  z-index: 10; 
+  width: calc(80% - 40px); 
 }
 
 .card {
@@ -200,19 +217,12 @@ form {
   align-items: center;
   padding: 0.8rem;
   border: 0.5px solid rgb(136, 136, 136);
-  margin: 20px, 40px;
+  margin: 20px;
   max-width: 300px; 
   width: 100%;
   border-radius: 10px;
   background-color: #f0f0f0;
   transition: border 0.3s;
-
-}
-.link-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .card:hover {
@@ -226,15 +236,15 @@ form {
   justify-content: center;
   align-items: stretch;
   padding: 20px;
-
 }
 
 .img-doc {
-  width: 90%;
+  width: 80%;
 }
 
 .container-card-detail {
-  width: 100%;
+  width: 100%; 
+  height: 80vh; 
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -242,14 +252,18 @@ form {
 }
 
 .card-detail {
-  width: 50%;
-  padding: 20px;
+  width: 100%; 
+  max-width: 500px;
+  margin: auto; 
+  padding: 5px;
   text-align: center;
   border: 2px solid black;
+  border-radius: 10px;
 }
 
 .img-doc-detail {
-  width: 50%;
+  width: 50%; 
+  margin-bottom: 20px; 
 }
 
 .btn-back {
@@ -263,8 +277,8 @@ form {
 }
 
 .btn-back:hover {
-  cursor: pointer;
   background-color: rgb(178, 206, 255);
+  cursor: pointer;
 }
 
 .container-favs {
@@ -293,8 +307,7 @@ table {
   background-color: #f9eb28;
 }
 
-td,
-th {
+td, th {
   border: 1px solid #e5e5e5;
   text-align: left;
   padding: 8px;
@@ -304,19 +317,96 @@ tr:nth-child(even) {
   background-color: #e5e5e5;
 }
 
+
 #dark {
-  background-color: #1c1c1c98;
-  color: white;
-}
-#dark .nav a {
-  color: white;
-}
-#dark .footer {
-  background-color: #1c1c1c98;
-  color: white;
+  background-color: #34495E;
+  color: #ecf0f1;
 }
 
-#dark .nav {
-  background-color: #1c1c1c98;
-  color: white;
+#dark .container-form {
+  background-color: #2C3E50; 
+  color: #ecf0f1;
+}
+
+#dark .input-form {
+  background-color: #34495E; 
+  color: #ecf0f1; 
+  border-color: #4A6FA5;
+}
+
+#dark .input-form:focus {
+  border-color: #1ABC9C; 
+}
+
+#dark .btn-form {
+  background-color: #3498db; 
+}
+
+#dark .btn-form:hover {
+  background-color: #2980b9;
+}
+
+#dark .success-message {
+  background-color: #16a085;
+  color: #ffffff; 
+}
+
+
+#dark label {
+  color: #ecf0f1; 
+}
+
+#dark .nav, #dark .footer {
+  background-color: #2C3E50;
+}
+
+#dark .favButton, #dark .removeFav {
+  background-color: #3498db;
+  color: #f1f1f1;
+}
+
+#dark .favButton:hover {
+  background-color: #2980b9;
+}
+
+#dark .removeFav {
+  background-color: #e74c3c;
+}
+
+#dark .removeFav:hover {
+  background-color: #c0392b;
+}
+
+#dark .links-navbar a, #dark .links-navbar a:hover {
+  color: #ecf0f1;
+}
+
+#dark .btn-theme:hover {
+  background-color: #2980b9;
+}
+
+#dark .card, #dark .card-detail {
+  background-color: #2C3E50;
+  border-color: #475a72;
+}
+
+.card a,
+.card a:link,
+.card a:visited,
+.card a:hover,
+.card a:focus,
+.card a:active {
+  color: inherit; 
+  text-decoration: none;
+}
+
+
+.card .dentist-name {
+  color: #000; 
+}
+
+
+.card .dentist-name:hover,
+.card .dentist-name:focus {
+  color: #000; 
 }

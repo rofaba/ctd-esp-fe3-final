@@ -1,19 +1,17 @@
-import React from "react";
-import { Link, useNavigate } from "react-router-dom"; // Asegúrate de importar useNavigate
+import { Link, useNavigate } from "react-router-dom";
 import { useContextGlobal } from "../Components/utils/ContextGlobal";
 
 const Favs = () => {
   const { favs } = useContextGlobal();
-  const navigate = useNavigate(); // Utiliza useNavigate aquí
+  const navigate = useNavigate();
 
-  let filteredFavs = favs.filter((item, index) => {
-    return favs.indexOf(item) === index;
-  });
+  let filteredFavs = favs.filter((item, index) => favs.indexOf(item) === index);
 
   return (
     <>
-      <h1>Dentists Favs</h1>
+      <h2>Dentistas Favoritos</h2>
       
+      {filteredFavs.length > 0 ? ( 
         <div className="card-grid"> 
           {filteredFavs.map(item => (
             <Link to={`/detail/${item.id}`} key={item.id} className="link-card">
@@ -25,12 +23,16 @@ const Favs = () => {
             </Link>
           ))}
         </div>
+      ) : (
+        <p>No hay favoritos agregados.</p>
+         
+      )}
       
       <button onClick={() => navigate(-1)} className="btn-back">Volver</button>
     </>
   );
 };
 
-
 export default Favs;
+
 

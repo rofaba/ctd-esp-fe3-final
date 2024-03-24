@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useContextGlobal } from "./utils/ContextGlobal";
 import TempAlert from "./TempAlert"; 
@@ -27,7 +27,7 @@ const Card = ({ data }) => {
       <div className="card">
         <Link to={`/detail/${data.id}`} key={data.id} className="link-card">
           <img src="./images/doctor.jpg" alt="img-doc" className="img-doc" />
-          <h4>{data.name}</h4>
+          <h5>{data.name}</h5>
           <h5>{data.username}</h5>
         </Link>
         <button

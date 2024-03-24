@@ -1,10 +1,8 @@
-import React from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useContextGlobal } from '../Components/utils/ContextGlobal'
 
 const Detail = () => {
  
-
   const params = useParams()
   const navigate = useNavigate()
 
@@ -14,12 +12,12 @@ const Detail = () => {
 
   return (
     <>
-      <h1> Detalles Dentista </h1>
+      <h2> Detalles Dentista </h2>
       <div className='container-card-detail'>
-        <div className='card-detail'>
+        <div className='card'>
           <img src="/images/doctor.jpg" alt="img-doc" className="img-doc-detail" />
-          <h3>Id profesional: {params.id}</h3>
-          <h3>Nombre: {data.name}</h3>
+          <h4>Id profesional: {params.id}</h4>
+          <h3>{data.name}</h3>
           <p>Email: {data.email}</p>
           <p>Phone: {data.phone}</p>
           <p>Website: {data.website}</p>

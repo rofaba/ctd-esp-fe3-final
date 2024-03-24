@@ -1,5 +1,3 @@
-// ThemeToggleButton.js
-import React from 'react';
 import { useContextGlobal } from './utils/ContextGlobal';
 
 const ThemeToggleButton = () => {
@@ -7,7 +5,7 @@ const ThemeToggleButton = () => {
 
   return (
     <button className="btn-theme" onClick={() => dispatch({ type: "change_theme" })}>
-      Change theme
+      ☀️ / 🌙
     </button>
   );
 };

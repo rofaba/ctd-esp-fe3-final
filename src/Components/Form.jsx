@@ -1,80 +1,84 @@
-import React from "react";
 import { useState } from "react";
 
-
 const Form = () => {
-
   const [values, setValues] = useState({
     name: "",
+    lastName: "",
     email: "",
-  })
+  });
 
-  const [validation, setValidation] = useState(false)
-
+  const [successMessage, setSuccessMessage] = useState("");
 
   const validateName = () => {
+    if (values.name.trim().length < 3) {
+      alert("Por favor, ingrese un nombre válido con más de 2 caracteres.");
+      return false;
+    }
+    return true;
+  };
 
-    let nameUser = values.name.split(" ")
-
-    if (nameUser.length < 2) return alert("por favor ingrese Nombre y apellido")
-    if (nameUser[0].length < 3 || nameUser[1].length < 3) return alert("por favor ingrese un nombre/apellido valido")
-
-    return true
-
-  }
+  const validateLastName = () => {
+    if (values.lastName.trim().length < 3) {
+      alert("Por favor, ingrese un apellido válido con más de 2 caracteres.");
+      return false;
+    }
+    return true;
+  };
 
   const validateEmail = () => {
-
-    let emailUser = values.email.split("@")
-    if (emailUser.length < 2) return alert("Email incorrecto, debe contener una '@' y una extension valida como '.com'")
-
-    let dotCom = emailUser[1].split(".")
-    if (dotCom.length < 2) return alert("Email incorrecto, debe contener una '@' y una extension valida como '.com'")
-
-    return true
-
-  }
+    let emailUser = values.email.split("@");
+    if (emailUser.length < 2) {
+      alert("Email incorrecto, debe contener una '@' y una extensión válida como '.com'");
+      return false;
+    }
+    let dotCom = emailUser[1].split(".");
+    if (dotCom.length < 2) {
+      alert("Email incorrecto, debe contener una '@' y una extensión válida como '.com'");
+      return false;
+    }
+    return true;
+  };
 
   const handleChange = (e) => {
-
-    const { target } = e
-    const { name, value } = target
-
-    const newValues = {
-      ...values,
-      [name]:value,
-    }
-
-    setValues(newValues)
-
-  }
+    const { name, value } = e.target;
+    setValues((prevValues) => ({
+      ...prevValues,
+      [name]: value,
+    }));
+  };
 
   const handleSubmit = (e) => {
-
-    e.preventDefault()
-
-    let nameValidation = validateName()
-
-    let emailValidation = validateEmail()
-
-    if (nameValidation && emailValidation) {
-      setValidation(true)
+    e.preventDefault();
+    if (validateName() && validateLastName() && validateEmail()) {
+  
+      setSuccessMessage(`Gracias ${values.name} ${values.lastName}, te contactaremos cuanto antes vía Email.`);
+      setValues({
+        name: "",
+        lastName: "",
+        email: "",
+      });
     }
-
-  }
+  };
 
   return (
-    <>
+    <div className="form-container">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Name</label>
-        <input type="text" name="name" className="input-form" onChange={handleChange} />
+        <label htmlFor="name">Nombre</label>
+        <input type="text" name="name" value={values.name} className="input-form" onChange={handleChange} />
+        
+        <label htmlFor="lastName">Apellido</label>
+        <input type="text" name="lastName" value={values.lastName} className="input-form" onChange={handleChange} />
+        
         <label htmlFor="email">Email</label>
-        <input type="text" name="email" className="input-form" onChange={handleChange} />
-        <button type="submit" className="btn-form">SUBMIT</button>
+        <input type="text" name="email" value={values.email} className="input-form" onChange={handleChange} />
+        
+        <button type="submit" className="btn-form">Enviar</button>
       </form>
-      {validation ? <h3>Gracias por comunicarse con nosotros {values.name}, un asistente se contactará lo antes posible!</h3> : ""}
-    </>
+      
+      {successMessage && <h4 className="success-message">{successMessage}</h4>}
+    </div>
   );
 };
 
 export default Form;
+
