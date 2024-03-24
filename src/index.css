@@ -188,6 +188,14 @@ label {
   margin-bottom: 15px;
 }
 
+.img-doc-detail {
+  width: 60%;
+  border-radius: 50%;
+  
+  margin-top: 1rem
+}
+
+
 .container-card-detail {
   width: 100%;
   height: 80vh;
@@ -199,8 +207,8 @@ label {
 
 .card-detail {
   max-width: 300px;
-  margin: 10px auto;
-  padding: 10px;
+  margin: 5px auto;
+  padding: 5px;
   text-align: center;
   color: #000;
   background-color: #ffffff;
@@ -211,7 +219,7 @@ label {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  margin-bottom: 1rem;
 }
 
 .img-doc-detail {
@@ -252,11 +260,6 @@ table {
   width: 100%;
   display: table;
   border: 1px solid #ccc;
-}
-
-.fav-empty {
-  font-size: 3rem;
-  text-align: center;
 }
 
 .active {
@@ -343,12 +346,12 @@ footer {
   display: flex;
   justify-content: space-evenly;
   text-align: center;
-  padding: 3rem 0;
+  padding: 2rem 0;
   position: relative;
   bottom: 0;
   width: 100%;
-  height: 40px;
-  margin-top: 2rem;
+  height: 30px;
+  margin-top: 1rem;
 }
 
 footer .DhLogo {
@@ -390,4 +393,37 @@ footer .social-media img:hover {
 
 #dark footer a:hover {
   color: #1ABC9C;
+}
+/* Estilos para el botón en modo claro */
+.favButton {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  color: #ffffff; /* Texto blanco para contraste */
+  background-color: #007bff; /* Fondo azul por defecto */
+}
+
+.favButton.removeFav {
+  background-color: #dc3545; /* Fondo rojo para "Eliminar de favoritos" */
+}
+
+/* Estilos al pasar el cursor */
+.favButton:hover {
+  opacity: 0.9; /* Ligeramente transparente al pasar el cursor */
+}
+
+/* Estilos para el modo oscuro */
+#dark .favButton {
+  color: #ffffff; /* Texto blanco en modo oscuro */
+  background-color: #6c757d; /* Fondo gris oscuro por defecto en modo oscuro */
+}
+
+#dark .favButton.removeFav {
+  background-color: #dc3545; /* Fondo rojo para "Eliminar de favoritos" también en modo oscuro */
+}
+
+#dark .favButton:hover {
+  opacity: 0.9; /* Igual que en modo claro */
 }

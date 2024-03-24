@@ -16,7 +16,6 @@ const Detail = () => {
       <div className='container-card-detail'>
         <div className='card-detail'>
           <img src="/images/doctor.jpg" alt="imagen-dentista" className="img-doc-detail" />
-          <h4>Id profesional: {params.id}</h4>
           <h3>{data.name}</h3>
           <p>Email: {data.email}</p>
           <p>Phone: {data.phone}</p>

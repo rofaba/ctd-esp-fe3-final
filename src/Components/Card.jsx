@@ -31,6 +31,7 @@ const Card = ({ data }) => {
           <h5>{data.username}</h5>
         </Link>
         <button
+          
           onClick={toggleFav}
           className={`favButton ${active ? "removeFav" : ""}`}
           id={theme.theme}
