@@ -28,7 +28,7 @@ const ContextProvider = ({ children }) => {
   useEffect(() => {
     const fetchDentist = async () => {
       try {
-        const response = await axios.get("https://jsonplaceholder.typicode.com/users");
+        const response = await axios("https://jsonplaceholder.typicode.com/users");
         setDentist(response.data);
       } catch (error) {
         console.error("Error al cargar información de dentistas", error);

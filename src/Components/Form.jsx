@@ -11,7 +11,7 @@ const Form = () => {
 
   const validateName = () => {
     if (values.name.trim().length < 3) {
-      alert("Por favor, ingrese un nombre válido con más de 2 caracteres.");
+      alert("Por favor verifique su información nuevamente");
       return false;
     }
     return true;
@@ -19,7 +19,7 @@ const Form = () => {
 
   const validateLastName = () => {
     if (values.lastName.trim().length < 3) {
-      alert("Por favor, ingrese un apellido válido con más de 2 caracteres.");
+      alert("Por favor verifique su información nnuevamente");
       return false;
     }
     return true;
@@ -28,12 +28,12 @@ const Form = () => {
   const validateEmail = () => {
     let emailUser = values.email.split("@");
     if (emailUser.length < 2) {
-      alert("Email incorrecto, debe contener una '@' y una extensión válida como '.com'");
+      alert("Por favor verifique su información nnuevamente");
       return false;
     }
     let dotCom = emailUser[1].split(".");
     if (dotCom.length < 2) {
-      alert("Email incorrecto, debe contener una '@' y una extensión válida como '.com'");
+      alert("Por favor verifique su información nuevamente");
       return false;
     }
     return true;
@@ -49,7 +49,7 @@ const Form = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     if (validateName() && validateLastName() && validateEmail()) {
   
       setSuccessMessage(`Gracias ${values.name} ${values.lastName}, te contactaremos cuanto antes vía Email.`);

@@ -15,7 +15,7 @@ code {
   position: fixed;
   top: 20px;
   right: 20px;
-  background-color: gray;
+  background-color: #808080;
   color: white;
   padding: 20px;
   border-radius: 5px;
@@ -27,7 +27,7 @@ code {
   justify-content: space-between;
   align-items: center;
   padding: 25px 50px;
-  background-color: gray;
+  background-color: #808080;
   color: white;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
@@ -122,7 +122,7 @@ label {
 .btn-form {
   width: 50%;
   padding: 15px;
-  background-color: gray;
+  background-color: #808080;
   color: white;
   font-size: 1rem;
   font-weight: 700;
@@ -144,7 +144,7 @@ label {
   top: 85%;
   left: 50%;
   transform: translate(-50%, 0);
-  background-color: gray;
+  background-color: #808080;
   color: white;  
   padding: 10px 20px;
   border-radius: 5px;
@@ -167,7 +167,7 @@ label {
   justify-content: center;
   gap: 10px;
   margin: 20px auto;
-  max-width: 300px;
+  max-width: 250px;
 }
 
 .card:hover {
@@ -175,7 +175,7 @@ label {
 }
 
 #dark .card:hover {
-  border-color: gray;
+  border-color: #808080;
 }
 
 .card-grid {
@@ -211,7 +211,7 @@ label {
 }
 
 .card-detail {
-  max-width: 300px;
+  max-width: 250px;
   margin: 5px auto;
   padding: 5px;
   text-align: center;
@@ -233,9 +233,9 @@ label {
 }
 
 .btn-back {
-  width: 200px;
-  padding: 12px;
-  background-color: gray;
+  width: 12rem;
+  padding: 1.25rem;
+  background-color: #808080;
   color: white;
   font-size: 1rem;
   font-weight: 700;
@@ -305,7 +305,7 @@ tr:nth-child(even) {
 }
 
 #dark .favButton:hover, #dark .removeFav:hover, #dark .btn-back:hover {
-  background-color: gray;
+  background-color: #808080;
 }
 
 #dark .links-navbar a, #dark .links-navbar a:hover {
@@ -338,6 +338,7 @@ tr:nth-child(even) {
   text-align: center;
   font-size: 1.2rem;
   margin-top: 20px;
+  padding: 8rem 0;
 }
 
 .Error_404 {
@@ -347,7 +348,7 @@ tr:nth-child(even) {
   margin: 20px auto;
 }
 footer {
-  background-color: gray;
+  background-color: #808080;
   display: flex;
   justify-content: space-evenly;
   text-align: center;
@@ -407,7 +408,7 @@ footer .social-media img:hover {
   cursor: pointer;
   transition: background-color 0.3s;
   color: #ffffff;
-  background-color: gray; 
+  background-color: #808080; 
 }
 
 .favButton.removeFav {
