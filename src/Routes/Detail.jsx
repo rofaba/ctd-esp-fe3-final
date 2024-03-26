@@ -1,14 +1,28 @@
-import { useNavigate, useParams } from 'react-router-dom'
-import { useContextGlobal } from '../Components/utils/ContextGlobal'
+import { useState, useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import axios from 'axios'; 
 
 const Detail = () => {
- 
-  const params = useParams()
-  const navigate = useNavigate()
+  const [dentist, setDentist] = useState(null);
+  const params = useParams();
+  const navigate = useNavigate();
 
-  const { dentist } = useContextGlobal()
+  useEffect(() => {
+    const fetchDentist = async () => {
+      try {
+        const response = await axios.get(`https://jsonplaceholder.typicode.com/users/${params.id}`);
+        setDentist(response.data);
+      } catch (error) {
+        console.error("Error al cargar los detalles del dentista", error);
+      }
+    };
 
-  const data = dentist[params.id - 1]
+    fetchDentist();
+  }, [params.id]); 
+
+  if (!dentist) {
+    return <p className='loading'>Cargando detalles del dentista...</p>; 
+  }
 
   return (
     <>
@@ -16,15 +30,15 @@ const Detail = () => {
       <div className='container-card-detail'>
         <div className='card-detail'>
           <img src="/images/doctor.jpg" alt="imagen-dentista" className="img-doc-detail" />
-          <h3>{data.name}</h3>
-          <p>Email: {data.email}</p>
-          <p>Phone: {data.phone}</p>
-          <p>Website: {data.website}</p>
-          <button onClick={() => navigate(-1)} className="btn-back"> Volver</button>
+          <h3>{dentist.name}</h3>
+          <p>Email: {dentist.email}</p>
+          <p>Phone: {dentist.phone}</p>
+          <p>Website: {dentist.website}</p>
+          <button onClick={() => navigate(-1)} className="btn-back">Volver</button>
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Detail
+export default Detail;

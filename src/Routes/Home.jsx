@@ -4,7 +4,7 @@ import Card from '../Components/Card'
 
 const Home = () => {
   const { dentist } = useContextGlobal();
-  
+
   return (
     <div>
       <h2>Listado de profesionales</h2>

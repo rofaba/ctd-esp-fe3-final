@@ -49,6 +49,7 @@ const Form = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
     if (validateName() && validateLastName() && validateEmail()) {
   
       setSuccessMessage(`Gracias ${values.name} ${values.lastName}, te contactaremos cuanto antes vía Email.`);

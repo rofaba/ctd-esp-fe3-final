@@ -15,7 +15,7 @@ code {
   position: fixed;
   top: 20px;
   right: 20px;
-  background-color: green;
+  background-color: gray;
   color: white;
   padding: 20px;
   border-radius: 5px;
@@ -60,17 +60,17 @@ code {
 }
 
 .btn-theme {
-  padding: 10px 20px;
-  background-color: #3498db;
+  padding: 10px 15px;
+  background-color:#2C3E50;
   color: white;
   border: none;
-  border-radius: 20px;
+  border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .btn-theme:hover {
-  background-color: #2980b9;
+  background-color:#475a72;
 }
 
 h2 {
@@ -79,13 +79,12 @@ h2 {
 
 .container-form {
   max-width: 500px;
-  width: 90%;
   margin: 20px auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: 1.5rem;
   background-color: #ffffff;
   border: 1px solid #e0e0e0;
   border-radius: 10px;
@@ -121,36 +120,38 @@ label {
 }
 
 .btn-form {
-  width: 80%;
-  padding: 12px;
-  background-color: #007bff;
+  width: 50%;
+  padding: 15px;
+  background-color: gray;
   color: white;
   font-size: 1rem;
   font-weight: 700;
   border: none;
-  border-radius: 8px;
+  border-radius: 5px;
   transition: background-color 0.2s;
   margin: auto;
   display: block;
+  gap: 10px;
 }
 
 .btn-form:hover {
-  background-color: #0056b3;
+  background-color: darkgray;
   cursor: pointer;
 }
 
 .success-message {
   position: absolute;
-  top: 90%;
+  top: 85%;
   left: 50%;
   transform: translate(-50%, 0);
-  background-color: #dff0d8;
-  color: #3c763d;
+  background-color: gray;
+  color: white;  
   padding: 10px 20px;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.2);
   z-index: 10;
-  width: calc(80% - 40px);
+  width: calc(40% - 20px);
+  text-align: center;
 }
 
 .card {
@@ -173,9 +174,13 @@ label {
   border-color: rgb(206, 217, 142);
 }
 
+#dark .card:hover {
+  border-color: gray;
+}
+
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(4, minmax(250px, 1fr));
   gap: 50px;
   justify-content: center;
   align-items: stretch;
@@ -230,7 +235,7 @@ label {
 .btn-back {
   width: 30%;
   padding: 12px;
-  background-color: rgb(196, 218, 255);
+  background-color: gray;
   color: white;
   font-size: 1rem;
   font-weight: 700;
@@ -287,7 +292,7 @@ tr:nth-child(even) {
   color: #ecf0f1;
 }
 #dark .btn-back {
-  background-color: (196, 218, 255);
+  background-color: #212A32;
 }
 
 #dark .nav, #dark {
@@ -295,12 +300,12 @@ tr:nth-child(even) {
 }
 
 #dark .favButton, #dark .removeFav {
-  background-color: #3498db;
+  background-color: #2C3E50;
   color: #f1f1f1;
 }
 
-#dark .favButton:hover, #dark .removeFav:hover {
-  background-color: #2980b9;
+#dark .favButton:hover, #dark .removeFav:hover, #dark .btn-back:hover {
+  background-color: gray;
 }
 
 #dark .links-navbar a, #dark .links-navbar a:hover {
@@ -394,36 +399,45 @@ footer .social-media img:hover {
 #dark footer a:hover {
   color: #1ABC9C;
 }
-/* Estilos para el botón en modo claro */
+
 .favButton {
   padding: 10px 15px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
-  color: #ffffff; /* Texto blanco para contraste */
-  background-color: #007bff; /* Fondo azul por defecto */
+  color: #ffffff;
+  background-color: gray; 
 }
 
 .favButton.removeFav {
-  background-color: #dc3545; /* Fondo rojo para "Eliminar de favoritos" */
+  background-color: #dc3545; 
 }
 
-/* Estilos al pasar el cursor */
+
 .favButton:hover {
-  opacity: 0.9; /* Ligeramente transparente al pasar el cursor */
+  opacity: 0.9; 
 }
 
-/* Estilos para el modo oscuro */
+
 #dark .favButton {
-  color: #ffffff; /* Texto blanco en modo oscuro */
-  background-color: #6c757d; /* Fondo gris oscuro por defecto en modo oscuro */
+  color: #ffffff; 
+  background-color: #212A32; 
 }
 
 #dark .favButton.removeFav {
-  background-color: #dc3545; /* Fondo rojo para "Eliminar de favoritos" también en modo oscuro */
+  background-color: #dc3545; 
 }
 
 #dark .favButton:hover {
-  opacity: 0.9; /* Igual que en modo claro */
+  opacity: 0.9;
 }
+.loading {
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+
+ }
