@@ -233,7 +233,7 @@ label {
 }
 
 .btn-back {
-  width: 30%;
+  width: 200px;
   padding: 12px;
   background-color: gray;
   color: white;
@@ -246,7 +246,7 @@ label {
 }
 
 .btn-back:hover {
-  background-color: #9ebaeb;
+  background-color:#475a72;
   cursor: pointer;
 }
 

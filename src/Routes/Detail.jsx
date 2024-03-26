@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios'; 
+import BtnBack from '../Components/BtnBack';
 
 const Detail = () => {
   const [dentist, setDentist] = useState(null);
@@ -34,9 +35,10 @@ const Detail = () => {
           <p>Email: {dentist.email}</p>
           <p>Phone: {dentist.phone}</p>
           <p>Website: {dentist.website}</p>
-          <button onClick={() => navigate(-1)} className="btn-back">Volver</button>
+         
         </div>
       </div>
+      <BtnBack />
     </>
   );
 };
