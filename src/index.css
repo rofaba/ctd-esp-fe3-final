@@ -14,12 +14,12 @@ code {
 .tempAlert {
   position: fixed;
   top: 20px;
-  right: 20px;
-  background-color: #808080;
-  color: white;
-  padding: 20px;
+  right: 150px;
+  color: red;
+  padding: 15px;
   border-radius: 5px;
   z-index: 1000;
+  background-color: #ccd0d5;
 }
 
 .nav {
@@ -33,9 +33,10 @@ code {
 }
 
 .navbar-logo {
-  height: 50px;
+  height: 3rem;
   width: auto;
-  padding-right: 20px;
+  margin-right: 20px;
+  border-radius: 50%;
 }
 
 .links-navbar {
@@ -196,7 +197,6 @@ label {
 .img-doc-detail {
   width: 60%;
   border-radius: 50%;
-  
   margin-top: 1rem
 }
 
@@ -211,9 +211,9 @@ label {
 }
 
 .card-detail {
-  max-width: 250px;
+  max-width: 800px; 
   margin: 5px auto;
-  padding: 5px;
+  padding: 25px;
   text-align: center;
   color: #000;
   background-color: #ffffff;
@@ -221,16 +221,26 @@ label {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  flex-direction: row;
+  align-items: center; 
+  justify-content: flex-start; 
+  gap: 20px; 
   margin-bottom: 1rem;
 }
 
 .img-doc-detail {
-  width: 40%;
-  margin-bottom: 20px;
+  width: 150px; 
+  height: auto; 
+  margin-left: 20px;
 }
+
+
+.dentist-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+}
+
 
 .btn-back {
   width: 12rem;

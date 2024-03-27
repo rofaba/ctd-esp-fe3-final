@@ -29,11 +29,16 @@ const Detail = () => {
       <h2> Detalles Dentista </h2>
       <div className='container-card-detail'>
         <div className='card-detail'>
-          <img src="/images/doctor.jpg" alt="imagen-dentista" className="img-doc-detail" />
+          <div>
+            <img src="/images/doctor.jpg" alt="imagen-dentista" className="img-doc-detail" />
           <h3>{dentist.name}</h3>
+          </div>
+          <div className='dentist-info'>
           <p>Email: {dentist.email}</p>
           <p>Phone: {dentist.phone}</p>
           <p>Website: {dentist.website}</p>
+          <p>AGREGAR BOTON FAVORITOS; NECESARIO COMPONETIZAR ANTES</p>
+          </div>
          
         </div>
       </div>

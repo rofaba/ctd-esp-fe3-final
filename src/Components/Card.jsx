@@ -39,7 +39,7 @@ const Card = ({ data }) => {
           {active ? "Eliminar de favoritos" : "Agregar a favoritos"}
         </button>
       </div>
-      {tempAlertMessage && <TempAlert message={tempAlertMessage} duration={3000} />}
+      {tempAlertMessage && <TempAlert message={tempAlertMessage} duration={2000} />}
     </>
   );
 };

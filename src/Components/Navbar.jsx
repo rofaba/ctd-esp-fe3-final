@@ -11,10 +11,8 @@ const Navbar = () => {
   return (
     <nav className="nav" id={theme}>
       <div className="links-navbar">
-      <img className="navbar-logo" src="./images/logo-dental.png" alt="logo dental" />
-   {/*    <Link to="/">  
-      <img className="navbar-logo" src="./images/logo-dental.png" alt="logo dental" />
-      </Link> */}
+      <img className="navbar-logo" src="./images/logo_dental.jpg" alt="logo dental" />
+  
         <Link to="/"> Home</Link>
         <Link to="/contact">Contacto</Link>
         <Link to="/favs">Favoritos</Link>
