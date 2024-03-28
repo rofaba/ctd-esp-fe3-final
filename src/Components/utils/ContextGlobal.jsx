@@ -1,35 +1,70 @@
 import axios from "axios";
-import { useReducer, useEffect, useState, createContext, useContext, useMemo } from "react";
+import { useReducer, useEffect, createContext, useContext, useMemo } from "react";
 
-export const initialState = { theme: "light" };
+// Acciones
+export const actions = {
+  ADD_FAVORITE: 'ADD_FAVORITE',
+  REMOVE_FAVORITE: 'REMOVE_FAVORITE',
+  CHANGE_THEME: 'CHANGE_THEME',
+SET_DENTIST: 'SET_DENTIST', 
+};
 
+// Estado inicial
+export const initialState = {
+  theme: "light",
+  favs: [],
+  dentist: []
+};
+
+// Reducer
 const reducer = (state, action) => {
   switch (action.type) {
-    case "change_theme":
-      return { theme: state.theme === "light" ? "dark" : "light" };
+    case actions.ADD_FAVORITE:
+      return {
+        ...state,
+        favs: [...state.favs, action.payload],
+      };
+    case actions.REMOVE_FAVORITE:
+      return {
+        ...state,
+        favs: state.favs.filter((dentist) => dentist.id !== action.payload),
+      };
+    case actions.CLEAR_FAVORITES:
+      return {
+        ...state,
+        favs: [], 
+      };
+    case actions.CHANGE_THEME:
+      return {
+        ...state,
+        theme: state.theme === "light" ? "dark" : "light",
+      };
+      case 'SET_DENTIST':
+  return {
+    ...state,
+    dentist: action.payload,
+  };
     default:
-      throw new Error("Cambio de theme con errores.");
+      return state;
   }
 };
 
 export const ContextGlobal = createContext();
 
 const ContextProvider = ({ children }) => {
-  const [theme, dispatch] = useReducer(reducer, initialState);
-  const [dentist, setDentist] = useState([]);
-  const [favs, setFavs] = useState([]);
-  
-  const KEY = "card.info";
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
-    localStorage.setItem(KEY, JSON.stringify(favs));
-  }, [favs]);
+    const KEY = "card.info";
+    localStorage.setItem(KEY, JSON.stringify(state.favs));
+  }, [state.favs]);
 
   useEffect(() => {
     const fetchDentist = async () => {
       try {
-        const response = await axios("https://jsonplaceholder.typicode.com/users");
-        setDentist(response.data);
+        const response = await axios.get("https://jsonplaceholder.typicode.com/users");
+      
+        dispatch({ type: 'SET_DENTIST', payload: response.data });
       } catch (error) {
         console.error("Error al cargar información de dentistas", error);
       }
@@ -38,17 +73,17 @@ const ContextProvider = ({ children }) => {
     fetchDentist();
   }, []);
 
-  const value = useMemo(() => ({
-    dentist,
-    theme,
-    dispatch,
-    favs,
-    setFavs,
-  }), [dentist, theme, favs]);
 
-  return <ContextGlobal.Provider value={value}>{children}</ContextGlobal.Provider>;
+  const value = useMemo(() => ({ state, dispatch }), [state]);
+
+  return (
+    <ContextGlobal.Provider value={value}>
+      {children}
+    </ContextGlobal.Provider>
+  );
 };
 
 export default ContextProvider;
+
 
 export const useContextGlobal = () => useContext(ContextGlobal);

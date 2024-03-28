@@ -6,10 +6,10 @@ import ThemeToggleButton from './ThemeToggleButton';
 
 
 const Navbar = () => {
-  const { theme } = useContextGlobal();
+  const { state } = useContextGlobal();
 
   return (
-    <nav className="nav" id={theme}>
+    <nav className="nav" id={state.theme}>
       <div className="links-navbar">
       <img className="navbar-logo" src="./images/logo_dental.jpg" alt="logo dental" />
   

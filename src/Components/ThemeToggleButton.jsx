@@ -1,13 +1,20 @@
-import { useContextGlobal } from './utils/ContextGlobal';
+import { useContextGlobal, actions } from './utils/ContextGlobal';
 
 const ThemeToggleButton = () => {
-  const { theme, dispatch } = useContextGlobal(); 
+  const { state: { theme }, dispatch } = useContextGlobal();
+
+  const toggleTheme = () => {
+    dispatch({ type: actions.CHANGE_THEME });
+  };
+
+  console.log(theme);
 
   return (
-    <button className="btn-theme" onClick={() => dispatch({ type: "change_theme" })}>
-      {theme.theme === 'light' ? '🌙' : '☀️'} 
+    <button className="btn-theme" onClick={toggleTheme}>
+      {theme === 'light' ? '🌙' : '☀️'}
     </button>
   );
 };
 
 export default ThemeToggleButton;
+

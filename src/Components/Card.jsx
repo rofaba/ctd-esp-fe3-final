@@ -1,41 +1,41 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { useContextGlobal } from "./utils/ContextGlobal";
-import TempAlert from "./TempAlert"; 
+import TempAlert from "./TempAlert";
+import { actions } from "./utils/ContextGlobal";
+import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const Card = ({ data }) => {
-  const { theme, setFavs, favs } = useContextGlobal();
+  const { state, dispatch } = useContextGlobal();
   const [active, setActive] = useState(false);
   const [tempAlertMessage, setTempAlertMessage] = useState("");
 
   useEffect(() => {
-    setActive(favs.includes(data));
-  }, [favs, data]);
+    setActive(state.favs.some((fav) => fav.id === data.id));
+  }, [state.favs, data]);
 
+ 
   const toggleFav = () => {
-    if (active) {
-      setFavs(favs.filter(fav => fav.id !== data.id));
-      setTempAlertMessage(`Dentista ${data.name} eliminado de favoritos`); 
-    } else {
-      setFavs([...favs, data]);
-      setTempAlertMessage(`Dentista ${data.name} agregado como favoritos`); 
-    }
+  
+    const actionType = active ? actions.REMOVE_FAVORITE : actions.ADD_FAVORITE;
+  
+    dispatch({ type: actionType, payload: data.id });
+
+    setActive(!active);
+    const message = active
+      ? `Dentista ${data.name} eliminado de favoritos`
+      : `Dentista ${data.name} agregado como favorito`;
+    setTempAlertMessage(message);
   };
 
   return (
     <>
       <div className="card">
-        <Link to={`/detail/${data.id}`} key={data.id} className="card-container">
-          <img src="./images/doctor.jpg" alt="imagen-dentista" className="img-doc" />
+        <Link to={`/detail/${data.id}`} className="card-container">
+          <img src="./images/doctor.jpg" alt={`Dentista ${data.name}`} className="img-doc" />
           <h5>{data.name}</h5>
           <h5>{data.username}</h5>
         </Link>
-        <button
-          
-          onClick={toggleFav}
-          className={`favButton ${active ? "removeFav" : ""}`}
-          id={theme.theme}
-        >
+        <button onClick={toggleFav} className={`favButton ${active ? "removeFav" : ""}`}>
           {active ? "Eliminar de favoritos" : "Agregar a favoritos"}
         </button>
       </div>
@@ -45,5 +45,3 @@ const Card = ({ data }) => {
 };
 
 export default Card;
-
-

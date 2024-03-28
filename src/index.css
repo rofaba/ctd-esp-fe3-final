@@ -62,7 +62,7 @@ code {
 
 .btn-theme {
   padding: 10px 15px;
-  background-color:#2C3E50;
+  background-color:#333333;
   color: white;
   border: none;
   border-radius: 10px;
@@ -157,16 +157,16 @@ label {
 
 .card {
   background-color: #ffffff;
-  border: 1px solid #e0e0e0;
+  border: 0.5px solid #e0e0e0;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  padding: 15px 20px;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 5px;
   margin: 20px auto;
   max-width: 250px;
 }
@@ -256,7 +256,7 @@ label {
 }
 
 .btn-back:hover {
-  background-color:#475a72;
+  background-color:#8c8c8c;
   cursor: pointer;
 }
 
@@ -323,7 +323,7 @@ tr:nth-child(even) {
 }
 
 #dark .btn-theme:hover {
-  background-color: #2980b9;
+  background-color: #475a72;
 }
 
 .card a,
@@ -398,7 +398,7 @@ footer .social-media img:hover {
   transform: scale(1.15);
 }
 
-#dark .nav, #dark .footer {
+.dark .nav, .dark .footer {
   background-color: #212A32;
   color: white;
 }
@@ -452,3 +452,73 @@ footer .social-media img:hover {
   width: 100%;
 
  }
+
+
+.light {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+
+.dark {
+  background-color: #333333;
+  color: #333333;
+
+}
+
+
+.favButton {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  color: #ffffff;
+  background-color: #808080;
+}
+
+.favButton.removeFav {
+  background-color: #dc3545;
+}
+
+.favButton:hover {
+  opacity: 0.9; 
+}
+
+
+#dark .favButton {
+  color: #ffffff; 
+  background-color: #212A32; 
+}
+
+#dark .favButton.removeFav {
+  background-color: #dc3545;
+}
+
+#dark .favButton:hover {
+  opacity: 0.9;
+}
+.dark .no-favs, .dark .card .text{
+  color: #fff; 
+}
+.dark h2{
+  color:#ccc;
+}
+.favButton-all {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  color: whitesmoke;
+  background-color: #FF0000; 
+  
+}
+
+.favs-head{
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;
+  
+}
