@@ -24,11 +24,11 @@ const reducer = (state, action) => {
         ...state,
         favs: [...state.favs, action.payload],
       };
-    case actions.REMOVE_FAVORITE:
-      return {
-        ...state,
-        favs: state.favs.filter((dentist) => dentist.id !== action.payload),
-      };
+      case actions.REMOVE_FAVORITE:
+        return {
+            ...state,
+            favs: state.favs.filter(fav => fav.id !== action.payload)
+        };
     case actions.CLEAR_FAVORITES:
       return {
         ...state,

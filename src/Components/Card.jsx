@@ -10,21 +10,31 @@ const Card = ({ data }) => {
   const [tempAlertMessage, setTempAlertMessage] = useState("");
 
   useEffect(() => {
-    setActive(state.favs.some((fav) => fav.id === data.id));
+    const isFav = state.favs.some((fav) => fav.id === data.id);
+    setActive(isFav);
   }, [state.favs, data]);
 
- 
-  const toggleFav = () => {
-  
-    const actionType = active ? actions.REMOVE_FAVORITE : actions.ADD_FAVORITE;
-  
-    dispatch({ type: actionType, payload: data.id });
 
-    setActive(!active);
-    const message = active
-      ? `Dentista ${data.name} eliminado de favoritos`
-      : `Dentista ${data.name} agregado como favorito`;
-    setTempAlertMessage(message);
+  const addToFavorites = () => {
+    console.log("Agregando a favoritos:", data);
+    dispatch({ type: actions.ADD_FAVORITE, payload: data });
+    setTempAlertMessage(`Dentista ${data.name} agregado a favoritos`);
+    setActive(true);
+  };
+  
+  const removeFromFavorites = () => {
+    console.log("Eliminando de favoritos:", data);
+    dispatch({ type: actions.REMOVE_FAVORITE, payload: data.id }); 
+    setTempAlertMessage(`Dentista ${data.name} eliminado de favoritos`);
+    setActive(false);
+  };
+  
+  const toggleFav = () => {
+    if (active) {
+      removeFromFavorites();
+    } else {
+      addToFavorites();
+    }
   };
 
   return (

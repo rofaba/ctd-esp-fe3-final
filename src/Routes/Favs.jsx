@@ -1,7 +1,7 @@
 import { useContextGlobal } from "../Components/utils/ContextGlobal";
 import Card from "../Components/Card";
 import { useNavigate } from "react-router-dom";
-import { actions } from "../Components/utils/ContextGlobal"; // Asegúrate de importar actions
+import { actions } from "../Components/utils/ContextGlobal";
 
 const Favs = () => {
   const { state, dispatch } = useContextGlobal();
@@ -14,10 +14,11 @@ const Favs = () => {
   const clearFavorites = () => {
     dispatch({ type: actions.CLEAR_FAVORITES });
   };
+console.log(state.favs);
 
   return (
     <>
-    <div className ="favs-head">
+    <div className="favs-head">
       <h2>Dentistas Favoritos</h2>
       <button onClick={clearFavorites} className="favButton-all">
             Eliminar todos los favoritos

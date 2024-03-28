@@ -8,7 +8,7 @@ const TempAlert = ({ message, duration }) => {
       setVisible(true);
       const timer = setTimeout(() => {
         setVisible(false);
-      }, duration || 2000); 
+      }, duration || 1500); 
       
       return () => clearTimeout(timer);
     }
