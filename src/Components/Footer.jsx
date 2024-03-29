@@ -1,11 +1,11 @@
 import { useContextGlobal } from "./utils/ContextGlobal";
 
 const Footer = () => {
-  
+
   const { state } = useContextGlobal();
 
   return (
-    <footer className="footer" id={state.theme.theme}>
+    <footer className="footer" id={state.theme}>
       <div className="DhLogo">
         <p>Powered by</p>
         <img src="./images/DH.png" alt="DH-logo" />

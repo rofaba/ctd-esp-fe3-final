@@ -19,7 +19,7 @@ const Form = () => {
 
   const validateLastName = () => {
     if (values.lastName.trim().length < 3) {
-      alert("Por favor verifique su información nnuevamente");
+      alert("Por favor verifique su información nuevamente");
       return false;
     }
     return true;
@@ -28,7 +28,7 @@ const Form = () => {
   const validateEmail = () => {
     let emailUser = values.email.split("@");
     if (emailUser.length < 2) {
-      alert("Por favor verifique su información nnuevamente");
+      alert("Por favor verifique su información nuevamente");
       return false;
     }
     let dotCom = emailUser[1].split(".");
@@ -82,4 +82,3 @@ const Form = () => {
 };
 
 export default Form;
-

@@ -33,8 +33,8 @@ code {
 }
 
 .navbar-logo {
+  width: 4rem;
   height: 3rem;
-  width: auto;
   margin-right: 20px;
   border-radius: 50%;
 }
@@ -80,7 +80,7 @@ h2 {
 
 .container-form {
   max-width: 500px;
-  margin: 20px auto;
+  margin: 50px auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -93,10 +93,11 @@ h2 {
 }
 
 .form-container {
-  width: 100%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .input-form {
@@ -203,7 +204,7 @@ label {
 
 .container-card-detail {
   width: 100%;
-  height: 80vh;
+  height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -351,7 +352,7 @@ tr:nth-child(even) {
   padding: 8rem 0;
 }
 
-.Error_404 {
+.not_found {
   display: flex;
   width: 500px;
   height: auto;
@@ -455,7 +456,7 @@ footer .social-media img:hover {
 
 
 .light {
-  background-color: #ffffff;
+  background-color: #f0f0f0;
   color: #000000;
 }
 

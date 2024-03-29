@@ -7,15 +7,15 @@ import Home from "./Routes/Home";
 import Contact from "./Routes/Contact";
 import Favs from "./Routes/Favs";
 import { useContextGlobal } from "./Components/utils/ContextGlobal";
-import Error404 from "./Components/Error404";
+import NotFound from "./Components/NotFound";
 
 function App() {
   const { state } = useContextGlobal();
-console.log(state.theme);
+
   useEffect(() => {
-    // Asume que `state.theme` es la cadena de texto del tema actual
+   
     document.body.className = state.theme;
-  }, [state.theme]); // Se ejecuta cada vez que el tema cambia
+  }, [state.theme]); 
 
   return (
     <div className="App">
@@ -25,7 +25,7 @@ console.log(state.theme);
         <Route path="/detail/:id" element={<Detail />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/favs" element={<Favs />} />
-        <Route path="*" element={<Error404 />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </div>

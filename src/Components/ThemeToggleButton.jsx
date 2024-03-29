@@ -7,8 +7,6 @@ const ThemeToggleButton = () => {
     dispatch({ type: actions.CHANGE_THEME });
   };
 
-  console.log(theme);
-
   return (
     <button className="btn-theme" onClick={toggleTheme}>
       {theme === 'light' ? '🌙' : '☀️'}

@@ -1,8 +1,7 @@
 import { useNavigate } from "react-router"
 
 const BtnBack = () => {
-
-    const navigate = useNavigate();
+  const navigate = useNavigate();
     
   return (
     <div> 
@@ -10,5 +9,4 @@ const BtnBack = () => {
     </div>
   )
 }
-
-export default BtnBack
+export default BtnBack;

@@ -14,7 +14,6 @@ const Favs = () => {
   const clearFavorites = () => {
     dispatch({ type: actions.CLEAR_FAVORITES });
   };
-console.log(state.favs);
 
   return (
     <>
@@ -35,7 +34,7 @@ console.log(state.favs);
          
         </>
       ) : (
-        <p className="no-favs">No hay favoritos agregados.</p>
+        <p className="no-favs"> No hay favoritos agregados. </p>
       )}
       <button onClick={() => navigate("/")} className="btn-back">
         Volver

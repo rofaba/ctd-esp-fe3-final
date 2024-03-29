@@ -21,7 +21,7 @@ const Detail = () => {
   }, [params.id]); 
 
   if (!dentist) {
-    return <p className='loading'>Cargando detalles del dentista...</p>; 
+    return <p className='loading'> Cargando detalles del dentista...</p>; 
   }
 
   return (
@@ -37,7 +37,6 @@ const Detail = () => {
           <p>Email: {dentist.email}</p>
           <p>Phone: {dentist.phone}</p>
           <p>Website: {dentist.website}</p>
-          <p>AGREGAR BOTON FAVORITOS; NECESARIO COMPONETIZAR ANTES</p>
           </div>
          
         </div>
